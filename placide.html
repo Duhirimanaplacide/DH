@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>placide</title>
+</head>
+<style>
+
+    input{
+        width: 70px;
+    }
+.div1{
+        background:midnightblue;
+        height: 200px;
+        width: 550px;
+        color: wheat;
+        text-align: center;
+        margin-left: 3rem;
+        margin-top: 7rem;
+    }
+    .div2{
+        color:black;
+        width: 80px;
+        margin-top: 30px;
+    }
+    .div3{
+        
+        margin-left: 200px;
+        margin-top: -35px;
+        width: 50px;
+    
+    }
+    .div4{
+        
+        margin-left: 300px;
+        margin-top: -35px;
+        width: 50px;
+    }
+    .div5{
+        background:wheat;
+        height: 100px;
+        width: 400px;
+        margin-left: 8rem;
+        margin-top: -100px;
+    }
+    #span2{
+        margin-left: 200px;
+        
+    }
+    .div6{
+        margin-top: 30px;
+    }
+    hr{
+        height: 2px;
+        background:m;
+    }
+    .div41{
+        animation-iteration-count: infinite;
+        animation:backwards;
+                   
+                    
+    }
+    fieldset{
+        width: 25rem;
+        height: 25rem;
+        box-shadow:  1rem 1rem 1rem 1rem black;
+       background-color: cornflowerblue;
+        margin-left: 7rem;
+        border-radius: 100px;
+        text-align: center;
+        
+        
+    }
+    
+    
+
+
+</style>
+
+
+<body>
+    <fieldset>
+    <div class="div41">
+    
+    <div class="div1">
+ 
+        <h1>PLACIDE-COMPANY</h1>
+        <h2>WELLCOME </h2>
+    </div>
+
+<div class="div5">
+    <div class="div2">
+<span id="span1">AMOUNT: <input type="number" id="input1"></span>
+    </div>
+
+
+    <div class="div3">
+        <span>FROM:</span>
+<select id="select1">
+    <option value="1">USD-$</option>
+    <option value="2">RWF</option>
+    <option value="3">INR</option>
+</select>
+    </div>
+
+
+    <div class="div4">
+        <span>TO:</span>
+        <select id="select2">
+            <option value="1">USD-$</option>
+            <option value="2">RWF</option>
+            <option value="3">INR</option>
+        </select>
+            </div>
+            <div class="div6">
+
+                <button id="button" onclick="convert()">convert</button>
+
+                <span id="span2">result: </span> <input type="number"  id="input2">
+
+                <hr>
+            </div>
+        </div>
+    </div></fieldset>
+</body>
+<script>
+function convert(){
+
+    var q,w,e,Result;
+    q=Number(document.getElementById("select1").value)
+    w=Number(document.getElementById("select2").value)
+    e=Number(document.getElementById("input1").value)
+
+    if(q==w){
+        confirm("you input same country,please use different country!")
+    }
+    else{
+        switch(q){
+            case 1:{
+                if(q==1 && w==2){
+                    Result=e*1290.60;
+                }
+                if(q==1 && w==3){
+                    Result=83.44*e;
+                }
+                }
+                break;
+
+                case 2:{
+                if(q==2 && w==1){
+                    Result=e/1290.60;
+                }
+                if(q==2 && w==3){
+                    Result=0.065*e;
+                }
+                
+            }
+            break;
+
+                case 3:{
+                if(q==3 && w==1){
+                    Result=e*0.012;
+                }
+                if(q==3 && w==2){
+                    Result=15.47*e;
+                
+            }
+          
+
+        }
+        break;
+       
+    }
+    
+}
+document.getElementById("input2").value=Result
+}
+    
+</script>
+</html>
